@@ -20,6 +20,19 @@ function writePassword() {
     return;
   }
 
+  //include lowercase y/n
+  var hasLowercase = confirm("include lower case letters?");
+
+  //include uppercase y/n
+  var hasUppercase = confirm("include upper case letters?");
+
+  //include numeric y/n
+  var hasNumbers = confirm("should password include numbers?");
+
+  //include special chars y/n
+  var hasSpecialChars = confirm("should password include special characters?");
+
+  
 
 }
 
