@@ -5,6 +5,17 @@ var passwordText = document.querySelector("#password");
 // Write password to the #password input
 function writePassword() {
 
+  //if generated password exists in ui element, ask user if they want to generate a new one
+  if (passwordText.value !== "") {
+    var resetPwValue = confirm("generated password exists. Overwrite with new value?")
+    if (resetPwValue) {
+      passwordText.value = "";
+    }
+    else {
+      return;
+    }
+  }
+  
   //propmt user to choose a number of characters between 8 and 128
   var charCount = getCharCount();
 
@@ -97,7 +108,7 @@ function generatePassword(charCount, hasLowercase, hasUppercase, hasNumbers, has
     return password;
   }
 
-  //generate random password
+  //generate random password of passed-in length
   for (var i = 0; i < charCount; i++) {
     password += allChars.charAt(Math.floor(Math.random() * allChars.length));
   }
